@@ -26,7 +26,7 @@
  * Copyright year (2009-this)
  * Todo: update this when changing our copyright comments in the source
  */
-#define COPYRIGHT_YEAR 2018
+#define COPYRIGHT_YEAR 2019
 
 #endif //HAVE_CONFIG_H
 
@@ -38,7 +38,7 @@
 #define DO_STRINGIZE(X) #X
 
 //! Copyright string used in Windows .rc files
-#define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers, 2014-" STRINGIZE(COPYRIGHT_YEAR) " The Crowdcoin Core Developers"
+#define COPYRIGHT_STR "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin Core Developers, 2014-2018 The Crowdcoin Core Developers, 2018-" STRINGIZE(COPYRIGHT_YEAR) " The Crowdclassic Core Developers"
 
 /**
  * crowdcoind-res.rc includes this file, but it cannot cope with real c++ code.
