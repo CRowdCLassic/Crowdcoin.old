@@ -1,9 +1,9 @@
 CRowdCLassic Core staging tree 0.12.1
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/crowdclassiccoin/crowdclassic.svg?branch=master)](https://travis-ci.org/crowdclassiccoin/crowdclassic) `v0.12.0.x:` [![Build Status](https://travis-ci.org/crowdclassiccoin/crowdclassic.svg?branch=v0.12.0.x)](https://travis-ci.org/crowdclassiccoin/crowdclassic/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/crowdclassiccoin/crowdclassic.svg?branch=v0.12.1.x)](https://travis-ci.org/crowdclassiccoin/crowdclassic/branches)
+`master:` [![Build Status](https://travis-ci.org/crowdclassic/crowdclassic-wallet.svg?branch=master)](https://travis-ci.org/crowdclassic/crowdclassic-wallet) `v0.12.0.x:` [![Build Status](https://travis-ci.org/crowdclassic/crowdclassic-wallet.svg?branch=v0.12.0.x)](https://travis-ci.org/crowdclassic/crowdclassic-wallet/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/crowdclassic/crowdclassic-wallet.svg?branch=v0.12.1.x)](https://travis-ci.org/crowdclassic/crowdclassic-wallet/branches)
 
-http://www.crowdclassic.site
+http://crowdclassic.github.io
 
 
 What is CRowdCLassic?
@@ -11,7 +11,7 @@ What is CRowdCLassic?
 
 CRCL is an advanced, decentralized and secure digital currency. Based on Dash, it's an enhanced and further developed version, featuring the masternode technology, near-instant and secure payments as well as anonymous transactions. With a fast block time of only 2 minutes, transactions will usually confirm and be successfully processed very quickly. CRCL's blockchain uses the advanced NeoScrypt Proof-of-Work algorithm to secure the network. NeoScrypt is ASIC resistant and ensures a fair and stable return on investment for the miners.
  
-Additional information, wallets, specifications & roadmap: https://bitcointalk.org/index.php?topic=2348866.0
+Additional information, wallets, specifications & roadmap will be added here.
 
 
 License
@@ -24,7 +24,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/crowdclassiccoin/crowdclassic/tags) are created to indicate new official,
+[Tags](https://github.com/crowdclassic/crowdclassic-wallet/tags) are created to indicate new official,
 stable release versions of CRowdCLassic Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
