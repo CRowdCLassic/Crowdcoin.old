@@ -13,7 +13,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_crowdcoin.h"
+#include "test/test_crowdclassic.h"
 
 #include <boost/foreach.hpp>
 #include <boost/test/unit_test.hpp>

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The CRowdCLassic Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
 
 /*
  * FIELDS AND CLASSIFICATION
@@ -45,7 +45,7 @@
  * =========================
  *
  *   // network
- *   CCrowdcoinNetwork lvl, network-type, network-status, network-error, milestone-status*
+ *   CCRowdCLassicNetwork lvl, network-type, network-status, network-error, milestone-status*
  *   CCategory lvl, category-type, status, status-error
  *   CNetworkGlobalVariable lvl, global-type, status, status-error
  *   // base: actor
@@ -79,7 +79,7 @@
  *  TREE STRUCTURE
  *  ===========================================
  * 
- *  CRC NETWORK (ROOT)
+ *  CRCL NETWORK (ROOT)
  *      -> NETWORK GLOBOLS
  *          -> SWITCHES, SETTINGS
  *      -> CATEGORIES
@@ -117,7 +117,7 @@ private:
     int nLevel;
     std::string strCategory;
 
-    // Current OBJECT STATUS (see http://govman.crowdcoin.org/index.php/Documentation_:_Status_Field)
+    // Current OBJECT STATUS (see http://govman.crowdclassic.org/index.php/Documentation_:_Status_Field)
     int nStatusID;
     std::string strStatusMessage;
 
@@ -130,7 +130,7 @@ public:
 };
 
 // // root node
-class CCrowdcoinNetwork : public CGovernanceObject
+class CCRowdCLassicNetwork : public CGovernanceObject
 {
 private:
     std::string strName;
@@ -138,7 +138,7 @@ private:
 
 
 public:
-    CCrowdcoinNetwork(UniValue objIn)
+    CCRowdCLassicNetwork(UniValue objIn)
     {
         strName = objIn["name"].get_str();
         strURL = objIn["name"].get_str();
@@ -174,9 +174,9 @@ public:
 
 };
 
-// // can be under: CrowdcoinNetwork
+// // can be under: CRowdCLassicNetwork
 // //   -- signature requirements : Key1(User)
-// class CCrowdcoinNetworkVariable : public CGovernanceObject
+// class CCRowdCLassicNetworkVariable : public CGovernanceObject
 // {
 // private:
 
@@ -279,7 +279,7 @@ public:
 //     // isRootCategory()
 //     // {
 //     //     // root categories won't have categories as parents
-//     //     return (IsType() == CrowdcoinNetwork);
+//     //     return (IsType() == CRowdCLassicNetwork);
 //     // }
 
 //     // isSubcategoryOf(std::string strParentName)

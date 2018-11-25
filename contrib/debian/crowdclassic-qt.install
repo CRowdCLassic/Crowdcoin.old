@@ -1,0 +1,6 @@
+usr/local/bin/crowdclassic-qt usr/bin
+share/pixmaps/crowdclassic32.xpm usr/share/pixmaps
+share/pixmaps/crowdclassic16.xpm usr/share/pixmaps
+share/pixmaps/crowdclassic128.png usr/share/pixmaps
+debian/crowdclassic-qt.desktop usr/share/applications
+debian/crowdclassic-qt.protocol usr/share/kde4/services/

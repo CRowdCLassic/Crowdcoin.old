@@ -1,8 +1,8 @@
-Source: crowdcoin
+Source: crowdclassic
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@crowdcoin.org>
-Uploaders: Holger Schinzel <holger@crowdcoin.org>
+Maintainer: Holger Schinzel <holger@crowdclassic.org>
+Uploaders: Holger Schinzel <holger@crowdclassic.org>
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -24,45 +24,45 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler,
  python
 Standards-Version: 3.9.2
-Homepage: https://www.crowdcoin.org/
-Vcs-Git: git://github.com/crowdcoincoin/crowdcoin.git
-Vcs-Browser: https://github.com/crowdcoincoin/crowdcoin
+Homepage: https://www.crowdclassic.org/
+Vcs-Git: git://github.com/crowdclassiccoin/crowdclassic.git
+Vcs-Browser: https://github.com/crowdclassiccoin/crowdclassic
 
-Package: crowdcoind
+Package: crowdclassicd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- Crowdcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Crowdcoin uses peer-to-peer
+ CRowdCLassic is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CRowdCLassic uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Crowdcoin Core
+ and issuing money are carried out collectively by the network. CRowdCLassic Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, crowdcoind, and the CLI tool
- crowdcoin-cli to interact with the daemon.
+ This package provides the daemon, crowdclassicd, and the CLI tool
+ crowdclassic-cli to interact with the daemon.
 
-Package: crowdcoin-qt
+Package: crowdclassic-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- Crowdcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Crowdcoin uses peer-to-peer
+ CRowdCLassic is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CRowdCLassic uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Crowdcoin Core
+ and issuing money are carried out collectively by the network. CRowdCLassic Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides Crowdcoin-Qt, a GUI for Crowdcoin based on Qt.
+ This package provides CRowdCLassic-Qt, a GUI for CRowdCLassic based on Qt.
 
-Package: crowdcoin-tx
+Package: crowdclassic-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- Crowdcoin is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. Crowdcoin uses peer-to-peer
+ CRowdCLassic is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. CRowdCLassic uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. Crowdcoin Core
+ and issuing money are carried out collectively by the network. CRowdCLassic Core
  is the name of the open source software which enables the use of this currency.
  .
- This package provides crowdcoin-tx, a command-line transaction creation
- tool which can be used without a crowdcoin daemon.  Some means of
+ This package provides crowdclassic-tx, a command-line transaction creation
+ tool which can be used without a crowdclassic daemon.  Some means of
  exchanging minimal transaction data with peers is still required.

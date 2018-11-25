@@ -5,7 +5,7 @@
 #include "util.h"
 
 #include "support/allocators/secure.h"
-#include "test/test_crowdcoin.h"
+#include "test/test_crowdclassic.h"
 
 #include <boost/test/unit_test.hpp>
 

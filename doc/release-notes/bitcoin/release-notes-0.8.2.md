@@ -116,7 +116,7 @@ Gregory Maxwell
 Jeff Garzik
 Jonas Schnelli
 Larry Gilbert
-Luke Crowdcoinjr
+Luke CRowdCLassicjr
 Matt Corallo
 Michael Ford
 Mike Hearn

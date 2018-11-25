@@ -762,16 +762,16 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About Crowdcoin Dialog */
+/* About CRowdCLassic Dialog */
 QDialog#AboutDialog {
 background-color:#F8F6F6;
 }
 
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Crowdcoin Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About CRowdCLassic Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About Crowdcoin text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About CRowdCLassic text */
 margin-right:10px;
 }
 
@@ -1126,7 +1126,7 @@ min-width:410px;
 margin-right:20px;
 margin-left:0;
 margin-top:0;
-background-image: url(':/images/crownium/crowdcoin_logo_horizontal');
+background-image: url(':/images/crownium/crowdclassic_logo_horizontal');
 background-repeat:none;
 }
 

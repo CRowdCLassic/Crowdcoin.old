@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The CRowdCLassic Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -802,7 +802,7 @@ std::pair<CService, std::set<uint256> > CMasternodeMan::PopScheduledMnbRequestCo
 
 void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CDataStream& vRecv)
 {
-    if(fLiteMode) return; // disable all Crowdcoin specific functionality
+    if(fLiteMode) return; // disable all CRowdCLassic specific functionality
     if(!masternodeSync.IsBlockchainSynced()) return;
 
     if (strCommand == NetMsgType::MNANNOUNCE) { //Masternode Broadcast

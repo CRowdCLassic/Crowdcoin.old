@@ -5,7 +5,7 @@
 #include "support/pagelocker.h"
 
 #if defined(HAVE_CONFIG_H)
-#include "config/crowdcoin-config.h"
+#include "config/crowdclassic-config.h"
 #endif
 
 #ifdef WIN32

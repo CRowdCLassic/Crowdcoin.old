@@ -1,0 +1,22 @@
+[Unit]
+Description=CRowdCLassic's distributed currency daemon
+After=network.target
+
+[Service]
+User=crowdclassiccore
+Group=crowdclassiccore
+
+Type=forking
+PIDFile=/var/lib/crowdclassicd/crowdclassicd.pid
+ExecStart=/usr/bin/crowdclassicd -daemon -pid=/var/lib/crowdclassicd/crowdclassicd.pid \
+-conf=/etc/crowdclassiccore/crowdclassic.conf -datadir=/var/lib/crowdclassicd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

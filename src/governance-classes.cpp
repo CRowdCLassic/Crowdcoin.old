@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The CRowdCLassic Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -435,7 +435,7 @@ void CSuperblockManager::CreateSuperblock(CMutableTransaction& txNewRet, int nBl
             ExtractDestination(payment.script, address1);
             CBitcoinAddress address2(address1);
 
-            // TODO: PRINT NICE N.N CRC OUTPUT
+            // TODO: PRINT NICE N.N CRCL OUTPUT
 
             DBG( cout << "CSuperblockManager::CreateSuperblock Before LogPrintf call, nAmount = " << payment.nAmount << endl; );
             LogPrintf("NEW Superblock : output %d (addr %s, amount %d)\n", i, address2.ToString(), payment.nAmount);
@@ -579,7 +579,7 @@ void CSuperblock::ParsePaymentSchedule(std::string& strPaymentAddresses, std::st
         CBitcoinAddress address(vecParsed1[i]);
         if (!address.IsValid()) {
             std::ostringstream ostr;
-            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid Crowdcoin Address : " <<  vecParsed1[i];
+            ostr << "CSuperblock::ParsePaymentSchedule -- Invalid CRowdCLassic Address : " <<  vecParsed1[i];
             LogPrintf("%s\n", ostr.str());
             throw std::runtime_error(ostr.str());
         }

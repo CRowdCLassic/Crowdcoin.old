@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: crowdcoind.service
-Upstart: crowdcoind.conf
-OpenRC:  crowdcoind.openrc
-         crowdcoind.openrcconf
-CentOS:  crowdcoind.init
-OS X:    org.crowdcoin.crowdcoind.plist
+SystemD: crowdclassicd.service
+Upstart: crowdclassicd.conf
+OpenRC:  crowdclassicd.openrc
+         crowdclassicd.openrcconf
+CentOS:  crowdclassicd.init
+OS X:    org.crowdclassic.crowdclassicd.plist
 
 have been made available to assist packagers in creating node packages here.
 

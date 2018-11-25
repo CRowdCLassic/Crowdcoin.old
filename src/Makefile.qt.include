@@ -1,24 +1,24 @@
-bin_PROGRAMS += qt/crowdcoin-qt
+bin_PROGRAMS += qt/crowdclassic-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# crowdcoin qt core #
+# crowdclassic qt core #
 QT_TS = \
-  qt/locale/crowdcoin_bg.ts \
-  qt/locale/crowdcoin_de.ts \
-  qt/locale/crowdcoin_en.ts \
-  qt/locale/crowdcoin_es.ts \
-  qt/locale/crowdcoin_fi.ts \
-  qt/locale/crowdcoin_fr.ts \
-  qt/locale/crowdcoin_it.ts \
-  qt/locale/crowdcoin_ja.ts \
-  qt/locale/crowdcoin_pl.ts \
-  qt/locale/crowdcoin_pt.ts \
-  qt/locale/crowdcoin_ru.ts \
-  qt/locale/crowdcoin_sk.ts \
-  qt/locale/crowdcoin_sv.ts \
-  qt/locale/crowdcoin_vi.ts \
-  qt/locale/crowdcoin_zh_CN.ts \
-  qt/locale/crowdcoin_zh_TW.ts
+  qt/locale/crowdclassic_bg.ts \
+  qt/locale/crowdclassic_de.ts \
+  qt/locale/crowdclassic_en.ts \
+  qt/locale/crowdclassic_es.ts \
+  qt/locale/crowdclassic_fi.ts \
+  qt/locale/crowdclassic_fr.ts \
+  qt/locale/crowdclassic_it.ts \
+  qt/locale/crowdclassic_ja.ts \
+  qt/locale/crowdclassic_pl.ts \
+  qt/locale/crowdclassic_pt.ts \
+  qt/locale/crowdclassic_ru.ts \
+  qt/locale/crowdclassic_sk.ts \
+  qt/locale/crowdclassic_sv.ts \
+  qt/locale/crowdclassic_vi.ts \
+  qt/locale/crowdclassic_zh_CN.ts \
+  qt/locale/crowdclassic_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -93,16 +93,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/crowdcoin.moc \
+  qt/crowdclassic.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_crowdcoin.cpp
-QT_QRC = qt/crowdcoin.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_crowdcoin_locale.cpp
-QT_QRC_LOCALE = qt/crowdcoin_locale.qrc
+QT_QRC_CPP = qt/qrc_crowdclassic.cpp
+QT_QRC = qt/crowdclassic.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_crowdclassic_locale.cpp
+QT_QRC_LOCALE = qt/crowdclassic_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -422,7 +422,7 @@ RES_IMAGES = \
   qt/res/images/drkblue/about.png \
   qt/res/images/drkblue/splash.png \
   qt/res/images/drkblue/splash_testnet.png \
-  qt/res/images/drkblue/crowdcoin_logo_horizontal.png \
+  qt/res/images/drkblue/crowdclassic_logo_horizontal.png \
   qt/res/images/drkblue/unchecked.png \
   qt/res/images/drkblue/checked.png \
   qt/res/images/drkblue/drkblue_downArrow.png \
@@ -435,7 +435,7 @@ RES_IMAGES = \
   qt/res/images/crownium/about.png \
   qt/res/images/crownium/splash.png \
   qt/res/images/crownium/splash_testnet.png \
-  qt/res/images/crownium/crowdcoin_logo_horizontal.png \
+  qt/res/images/crownium/crowdclassic_logo_horizontal.png \
   qt/res/images/crownium/unchecked.png \
   qt/res/images/crownium/checked.png \
   qt/res/images/crownium/drkblue_downArrow.png \
@@ -448,7 +448,7 @@ RES_IMAGES = \
   qt/res/images/light/about.png \
   qt/res/images/light/splash.png \
   qt/res/images/light/splash_testnet.png \
-  qt/res/images/light/crowdcoin_logo_horizontal.png \
+  qt/res/images/light/crowdclassic_logo_horizontal.png \
   qt/res/images/light/unchecked.png \
   qt/res/images/light/checked.png \
   qt/res/images/light/drkblue_downArrow.png \
@@ -461,7 +461,7 @@ RES_IMAGES = \
   qt/res/images/trad/about.png \
   qt/res/images/trad/splash.png \
   qt/res/images/trad/splash_testnet.png \
-  qt/res/images/trad/crowdcoin_logo_horizontal.png \
+  qt/res/images/trad/crowdclassic_logo_horizontal.png \
   qt/res/images/trad/drkblue_downArrow.png \
   qt/res/images/trad/drkblue_downArrow_small.png \
   qt/res/images/trad/drkblue_upArrow_small.png \
@@ -477,7 +477,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/crowdcoin-qt-res.rc
+BITCOIN_RC = qt/res/crowdclassic-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
@@ -498,70 +498,70 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_crowdcoin_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_crowdclassic_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# crowdcoin-qt binary #
-qt_crowdcoin_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# crowdclassic-qt binary #
+qt_crowdclassic_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_crowdcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_crowdclassic_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_crowdcoin_qt_SOURCES = qt/crowdcoin.cpp
+qt_crowdclassic_qt_SOURCES = qt/crowdclassic.cpp
 if TARGET_DARWIN
-  qt_crowdcoin_qt_SOURCES += $(BITCOIN_MM)
+  qt_crowdclassic_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_crowdcoin_qt_SOURCES += $(BITCOIN_RC)
+  qt_crowdclassic_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_crowdcoin_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_crowdclassic_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_crowdcoin_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_crowdclassic_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_crowdcoin_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_crowdclassic_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_crowdcoin_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_crowdclassic_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_crowdcoin_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_crowdcoin_qt_LIBTOOLFLAGS = --tag CXX
+qt_crowdclassic_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_crowdclassic_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-qt/crowdcoinstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
+qt/crowdclassicstrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) ../share/qt/extract_strings_qt.py $^
 
-translate: qt/crowdcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: qt/crowdclassicstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/crowdcoin_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts qt/locale/crowdclassic_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@test -f $(@D)/$(<F) || cp -f $< $(@D)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name crowdcoin_locale $(@D)/$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name crowdclassic_locale $(@D)/$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name crowdcoin $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name crowdclassic $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
 CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno
 
 CLEANFILES += $(CLEAN_QT)
 
-crowdcoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_crowdcoin_qt_OBJECTS) qt/crowdcoin-qt$(EXEEXT) $(LIBBITCOINQT)
+crowdclassic_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_crowdclassic_qt_OBJECTS) qt/crowdclassic-qt$(EXEEXT) $(LIBBITCOINQT)
 
-crowdcoin_qt : qt/crowdcoin-qt$(EXEEXT)
+crowdclassic_qt : qt/crowdclassic-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)
