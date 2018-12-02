@@ -3725,10 +3725,10 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
 
     // Check transactions
     BOOST_FOREACH(const CTransaction& tx, block.vtx)
-        if (!CheckTransaction(tx, state))
+        if (!CheckTransaction(tx, state))            // Fix crash bug with duplicate inputs within a transaction:
             return error("CheckBlock(): CheckTransaction of %s failed with %s",
                 tx.GetHash().ToString(),
-                FormatStateMessage(state));
+                FormatStateMessage(state));         // https://github.com/HTMLCOIN/HTMLCOIN/commit/499f7fb11bec199c0f377f09b1326ce954b87024
 
     unsigned int nSigOps = 0;
     BOOST_FOREACH(const CTransaction& tx, block.vtx)
