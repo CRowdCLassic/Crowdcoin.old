@@ -126,8 +126,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000007db550074c6535ce41c2a6043d0afbc86f17f1762b06e2cd65d100f7b5f"));
         assert(genesis.hashMerkleRoot == uint256S("0x06bb68e5a31f7ec49812110b03e088006342bc3598b1d705f7ae7282b8eec4a8"));
 
-        vSeeds.emplace_back("seeds.crcl.dns-cloud.net", false); // As it is explained here: https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back
-//        vSeeds.push_back(CDNSSeedData("crcl.dns-cloud.net", "seeds.crcl.dns-cloud.net")); // New DNS seed server
+//        vSeeds.emplace_back("seeds.crcl.dns-cloud.net", false); // As it is explained here: https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back
+        vSeeds.push_back(CDNSSeedData("crcl.dns-cloud.net", "seeds.crcl.dns-cloud.net")); // New DNS seed server
         //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic1.masterhash.us"));
         //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic2.masterhash.us"));
         //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic3.masterhash.us"));
