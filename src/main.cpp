@@ -3730,6 +3730,25 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
                 tx.GetHash().ToString(),
                 FormatStateMessage(state));         // https://github.com/HTMLCOIN/HTMLCOIN/commit/499f7fb11bec199c0f377f09b1326ce954b87024
 
+    /*  ToDo: Harden Tx`s further as at https://github.com/ignitioncoin/ignitioncoin/blob/master/src/main.cpp 2864 % 2877
+    
+            // ppcoin: check transaction timestamp
+        if (GetBlockTime() < (int64_t)tx.nTime)
+            return DoS(50, error("CheckBlock() : block timestamp earlier than transaction timestamp"));
+    }
+
+    // Check for duplicate txids. This is caught by ConnectInputs(),
+    // but catching it earlier avoids a potential DoS attack:
+    set<uint256> uniqueTx;
+    BOOST_FOREACH(const CTransaction& tx, vtx)
+    {
+        uniqueTx.insert(tx.GetHash());
+    }
+    if (uniqueTx.size() != vtx.size())
+        return DoS(100, error("CheckBlock() : duplicate transaction"));
+
+    */
+
     unsigned int nSigOps = 0;
     BOOST_FOREACH(const CTransaction& tx, block.vtx)
     {
