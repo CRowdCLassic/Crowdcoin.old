@@ -137,7 +137,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../crowdclassic.qrc"/>
+  <include location="../crowdcoin.qrc"/>
  </resources>
  <connections/>
 </ui>

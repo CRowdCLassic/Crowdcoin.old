@@ -17,7 +17,7 @@
   <string>APPL</string>
 
   <key>CFBundleGetInfoString</key>
-  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The CRowdCLassic Core developers</string>
+  <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@, Copyright © 2009-@COPYRIGHT_YEAR@ The Bitcoin Core developers, 2014-@COPYRIGHT_YEAR@ The Crowdcoin Core developers</string>
 
   <key>CFBundleShortVersionString</key>
   <string>@CLIENT_VERSION_MAJOR@.@CLIENT_VERSION_MINOR@.@CLIENT_VERSION_REVISION@</string>
@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>CRowdCLassic-Qt</string>
+  <string>Crowdcoin-Qt</string>
   
   <key>CFBundleName</key>
-  <string>CRowdCLassic-Qt</string>
+  <string>Crowdcoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.crowdclassic.CRowdCLassic-Qt</string>
+  <string>org.crowdcoin.Crowdcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.crowdclassic.CRowdCLassicPayment</string>
+      <string>org.crowdcoin.CrowdcoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>crowdclassic</string>
+        <string>crowdcoin</string>
       </array>
     </dict>
   </array>
@@ -58,9 +58,9 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.crowdclassic.paymentrequest</string>
+      <string>org.crowdcoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>CRowdCLassic payment request</string>
+      <string>Crowdcoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-crowdclassic-payment-request</string>
+        <string>application/x-crowdcoin-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>crowdclassiccoinmentrequest</string>
+          <string>crowdcoincoinmentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.crowdclassic.paymentrequest</string>
+        <string>org.crowdcoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

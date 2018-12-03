@@ -96,21 +96,7 @@ class InvalidBlockRequestTest(ComparisonTestFramework):
         assert(block2_orig.vtx != block2.vtx)
 
         self.tip = block2.sha256
-        # yield TestInstance([[block2, RejectResult(16, b'bad-txns-duplicate')], [block2_orig, True]])
-        # BEGIN Hardening transactions as at https://github.com/litecoin-project/litecoin/pull/536/commits/696b936aa3ab6f459d0e16f9805eaeb747a0036c
-        yield TestInstance([[block2, RejectResult(16, b'bad-txns-duplicate')]])
-
-        # Check transactions for duplicate inputs
-        self.log.info("Test duplicate input block.")
-
-        block2_dup = copy.deepcopy(block2_orig)
-        block2_dup.vtx[2].vin.append(block2_dup.vtx[2].vin[0])
-        block2_dup.vtx[2].rehash()
-        block2_dup.hashMerkleRoot = block2_dup.calc_merkle_root()
-        block2_dup.rehash()
-        block2_dup.solve()
-        yield TestInstance([[block2_dup, RejectResult(16, b'bad-txns-inputs-duplicate')], [block2_orig, True]])
-        # END
+        yield TestInstance([[block2, RejectResult(16, b'bad-txns-duplicate')], [block2_orig, True]])
         height += 1
 
         '''

@@ -7,8 +7,8 @@ GovernanceObjectType GovernanceStringToType(std::string strType) {
     if(strType == "AllTypes") type = AllTypes;
     if(strType == "Error") type = Error;
     if(strType == "ValueOverride") type = ValueOverride;
-    if(strType == "CRowdCLassicNetwork") type = CRowdCLassicNetwork;
-    if(strType == "CRowdCLassicNetworkVariable") type = CRowdCLassicNetworkVariable;
+    if(strType == "CrowdcoinNetwork") type = CrowdcoinNetwork;
+    if(strType == "CrowdcoinNetworkVariable") type = CrowdcoinNetworkVariable;
     if(strType == "Category") type = Category;
     if(strType == "Group") type = Group;
     if(strType == "User") type = User;
@@ -28,8 +28,8 @@ std::string GovernanceTypeToString(GovernanceObjectType type) {
     if(type == AllTypes) s = "AllTypes";
     if(type == Error) s = "Error";
     if(type == ValueOverride) s = "ValueOverride";
-    if(type == CRowdCLassicNetwork) s = "CRowdCLassicNetwork";
-    if(type == CRowdCLassicNetworkVariable) s = "CRowdCLassicNetworkVariable";
+    if(type == CrowdcoinNetwork) s = "CrowdcoinNetwork";
+    if(type == CrowdcoinNetworkVariable) s = "CrowdcoinNetworkVariable";
     if(type == Category) s = "Category";
     if(type == Group) s = "Group";
     if(type == User) s = "User";

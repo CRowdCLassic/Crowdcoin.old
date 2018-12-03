@@ -4,7 +4,7 @@
 
 #include "scriptnum10.h"
 #include "script/script.h"
-#include "test/test_crowdclassic.h"
+#include "test/test_crowdcoin.h"
 
 #include <boost/test/unit_test.hpp>
 #include <limits.h>

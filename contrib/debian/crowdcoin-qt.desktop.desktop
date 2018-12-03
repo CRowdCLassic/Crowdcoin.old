@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Crowdcoin
+Comment=Crowdcoin P2P Cryptocurrency
+Exec=crowdcoin-qt %u
+Terminal=false
+Type=Application
+Icon=crowdcoin128
+MimeType=x-scheme-handler/crowdcoin;
+Categories=Office;Finance;
+Name[en_US]=crowdcoin-qt.desktop

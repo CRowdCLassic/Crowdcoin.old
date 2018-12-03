@@ -17,7 +17,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 
-#include "test/test_crowdclassic.h"
+#include "test/test_crowdcoin.h"
 
 #include <boost/test/unit_test.hpp>
 

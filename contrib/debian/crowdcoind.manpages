@@ -1,0 +1,3 @@
+debian/manpages/crowdcoind.1
+debian/manpages/crowdcoin.conf.5
+debian/manpages/crowdcoin-cli.1

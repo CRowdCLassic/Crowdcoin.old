@@ -6,13 +6,13 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the crowdclassicd tests manually, launch `src/test/test_crowdclassic`.
+To run the crowdcoind tests manually, launch `src/test/test_crowdcoin`.
 
-To add more crowdclassicd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more crowdcoind tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the crowdclassic-qt tests manually, launch `src/qt/test/test_crowdclassic-qt`
+To run the crowdcoin-qt tests manually, launch `src/qt/test/test_crowdcoin-qt`
 
-To add more crowdclassic-qt tests, add them to the `src/qt/test/` directory and
+To add more crowdcoin-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.

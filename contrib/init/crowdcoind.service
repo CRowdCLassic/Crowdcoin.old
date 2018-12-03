@@ -1,0 +1,22 @@
+[Unit]
+Description=Crowdcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=crowdcoincore
+Group=crowdcoincore
+
+Type=forking
+PIDFile=/var/lib/crowdcoind/crowdcoind.pid
+ExecStart=/usr/bin/crowdcoind -daemon -pid=/var/lib/crowdcoind/crowdcoind.pid \
+-conf=/etc/crowdcoincore/crowdcoin.conf -datadir=/var/lib/crowdcoind -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

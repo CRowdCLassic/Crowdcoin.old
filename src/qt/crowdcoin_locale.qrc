@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/crowdcoin_bg.qm</file>
+        <file alias="de">locale/crowdcoin_de.qm</file>
+        <file alias="en">locale/crowdcoin_en.qm</file>
+        <file alias="es">locale/crowdcoin_es.qm</file>
+        <file alias="fi">locale/crowdcoin_fi.qm</file>
+        <file alias="fr">locale/crowdcoin_fr.qm</file>
+        <file alias="it">locale/crowdcoin_it.qm</file>
+        <file alias="ja">locale/crowdcoin_ja.qm</file>
+        <file alias="pl">locale/crowdcoin_pl.qm</file>
+        <file alias="pt">locale/crowdcoin_pt.qm</file>
+        <file alias="ru">locale/crowdcoin_ru.qm</file>
+        <file alias="sk">locale/crowdcoin_sk.qm</file>
+        <file alias="sv">locale/crowdcoin_sv.qm</file>
+        <file alias="vi">locale/crowdcoin_vi.qm</file>
+        <file alias="zh_CN">locale/crowdcoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/crowdcoin_zh_TW.qm</file>
+    </qresource>
+</RCC>

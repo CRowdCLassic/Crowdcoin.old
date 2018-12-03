@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C ../../ test_crowdclassic_qt
+	$(MAKE) -C ../../ test_crowdcoin_qt
 clean:
-	$(MAKE) -C ../../ test_crowdclassic_qt_clean
+	$(MAKE) -C ../../ test_crowdcoin_qt_clean
 check:
-	$(MAKE) -C ../../ test_crowdclassic_qt_check
+	$(MAKE) -C ../../ test_crowdcoin_qt_check

@@ -4,22 +4,22 @@
 
 	* means the category has an associated class
 	
-	CCRowdCLassicNetwork: CRCL NETWORK (ROOT)
+	CCrowdcoinNetwork: CRC NETWORK (ROOT)
 	has:
 		vector<CNetworkVariable> vecNetworkVariables;
-		vector<CCRowdCLassicProject> vecProjects;
+		vector<CCrowdcoinProject> vecProjects;
 		vector<CGovernanceObject> vecProposals;
 		vector<CBudgetContract> vecContracts;
 		vector<CBudgetUsers> vecUsers;
 
-	CCRowdCLassicProject:
+	CCrowdcoinProject:
 	has:
 		name
 		employees
 
 */
 
-	// CRCL NETWORK (ROOT)
+	// CRC NETWORK (ROOT)
 	// 	-> NETWORK VARIABLE
 	// 		-> switch, setting
 	// 	-> CATEGORIES

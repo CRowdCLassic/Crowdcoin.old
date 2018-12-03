@@ -7,7 +7,7 @@
 #define BITCOIN_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/crowdclassic-config.h"
+#include "config/crowdcoin-config.h"
 #endif
 
 #ifdef WIN32

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The Crowdcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -19,7 +19,7 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(CRCL);
+    unitlist.append(CRC);
     unitlist.append(mCRC);
     unitlist.append(uCRC);
     unitlist.append(duffs);
@@ -30,7 +30,7 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case CRCL:
+    case CRC:
     case mCRC:
     case uCRC:
     case duffs:
@@ -46,7 +46,7 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case CRCL: return QString("CRCL");
+            case CRC: return QString("CRC");
             case mCRC: return QString("mCRC");
             case uCRC: return QString::fromUtf8("μCRC");
             case duffs: return QString("duffs");
@@ -57,7 +57,7 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case CRCL: return QString("tCRC");
+            case CRC: return QString("tCRC");
             case mCRC: return QString("mtCRC");
             case uCRC: return QString::fromUtf8("μtCRC");
             case duffs: return QString("tduffs");
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case CRCL: return QString("CRowdCLassic");
-            case mCRC: return QString("Milli-CRowdCLassic (1 / 1" THIN_SP_UTF8 "000)");
-            case uCRC: return QString("Micro-CRowdCLassic (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-CRowdCLassic (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case CRC: return QString("Crowdcoin");
+            case mCRC: return QString("Milli-Crowdcoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uCRC: return QString("Micro-Crowdcoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-Crowdcoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case CRCL: return QString("TestCRowdCLassics");
-            case mCRC: return QString("Milli-TestCRowdCLassic (1 / 1" THIN_SP_UTF8 "000)");
-            case uCRC: return QString("Micro-TestCRowdCLassic (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestCRowdCLassic (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case CRC: return QString("TestCrowdcoins");
+            case mCRC: return QString("Milli-TestCrowdcoin (1 / 1" THIN_SP_UTF8 "000)");
+            case uCRC: return QString("Micro-TestCrowdcoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case duffs: return QString("Ten Nano-TestCrowdcoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -96,7 +96,7 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case CRCL:  return 100000000;
+    case CRC:  return 100000000;
     case mCRC: return 100000;
     case uCRC: return 100;
     case duffs: return 1;
@@ -108,7 +108,7 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case CRCL: return 8;
+    case CRC: return 8;
     case mCRC: return 5;
     case uCRC: return 2;
     case duffs: return 0;

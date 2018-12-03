@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The Crowdcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -116,7 +116,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a CRowdCLassic address (e.g. %1)").arg("XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"));
+    widget->setPlaceholderText(QObject::tr("Enter a Crowdcoin address (e.g. %1)").arg("XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
@@ -133,8 +133,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no crowdclassic: URI
-    if(!uri.isValid() || uri.scheme() != QString("crowdclassic"))
+    // return if URI is not valid or is no crowdcoin: URI
+    if(!uri.isValid() || uri.scheme() != QString("crowdcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -183,7 +183,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::CRCL, i->second, &rv.amount))
+                if(!BitcoinUnits::parse(BitcoinUnits::CRC, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -203,13 +203,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert crowdclassic:// to crowdclassic:
+    // Convert crowdcoin:// to crowdcoin:
     //
-    //    Cannot handle this later, because crowdclassic:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because crowdcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("crowdclassic://", Qt::CaseInsensitive))
+    if(uri.startsWith("crowdcoin://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "crowdclassic:");
+        uri.replace(0, 7, "crowdcoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -217,12 +217,12 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("crowdclassic:%1").arg(info.address);
+    QString ret = QString("crowdcoin:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::CRCL, info.amount, false, BitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::CRC, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -429,7 +429,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile();
 
-    /* Open crowdclassic.conf with the associated application */
+    /* Open crowdcoin.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -638,15 +638,15 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "CRowdCLassic.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Crowdcoin.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "CRowdCLassic (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("CRowdCLassic (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Crowdcoin (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Crowdcoin (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for CRowdCLassic*.lnk
+    // check for Crowdcoin*.lnk
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -738,8 +738,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "crowdclassic.desktop";
-    return GetAutostartDir() / strprintf("crowdclassic-%s.lnk", chain);
+        return GetAutostartDir() / "crowdcoin.desktop";
+    return GetAutostartDir() / strprintf("crowdcoin-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -778,11 +778,11 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a crowdclassic.desktop file to the autostart directory:
+        // Write a crowdcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=CRowdCLassic\n";
+            optionFile << "Name=Crowdcoin\n";
         else
             optionFile << strprintf("Name=Bitcoin (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
@@ -803,7 +803,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the CRowdCLassic Core app
+    // loop through the list of startup items and try to find the Crowdcoin Core app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -848,7 +848,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add CRowdCLassic Core app to startup item list
+        // add Crowdcoin Core app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {

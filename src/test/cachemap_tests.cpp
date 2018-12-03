@@ -1,8 +1,8 @@
-// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
+// Copyright (c) 2014-2017 The Crowdcoin Core developers
 
 #include "cachemap.h"
 
-#include "test/test_crowdclassic.h"
+#include "test/test_crowdcoin.h"
 
 #include <boost/test/unit_test.hpp>
 

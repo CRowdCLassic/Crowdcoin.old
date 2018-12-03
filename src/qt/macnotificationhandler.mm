@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.crowdclassic.CRowdCLassic-Qt";
+        return @"org.crowdcoin.Crowdcoin-Qt";
     } else {
         return [self __bundleIdentifier];
     }

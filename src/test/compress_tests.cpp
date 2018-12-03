@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_crowdclassic.h"
+#include "test/test_crowdcoin.h"
 
 #include <stdint.h>
 

@@ -1,1 +1,1 @@
-CMakeLists.txt not found in /home/pater92/Desktop/final_release/CRowdCLassic
+CMakeLists.txt not found in /home/pater92/Desktop/final_release/Crowdcoin

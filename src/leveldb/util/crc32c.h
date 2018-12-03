@@ -25,7 +25,7 @@ static const uint32_t kMaskDelta = 0xa282ead8ul;
 
 // Return a masked representation of crc.
 //
-// Motivation: it is problematic to compute the CRCL of a string that
+// Motivation: it is problematic to compute the CRC of a string that
 // contains embedded CRCs.  Therefore we recommend that CRCs stored
 // somewhere (e.g., in files) should be masked before being stored.
 inline uint32_t Mask(uint32_t crc) {

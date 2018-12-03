@@ -8,9 +8,9 @@
 namespace leveldb {
 namespace crc32c {
 
-class CRCL { };
+class CRC { };
 
-TEST(CRCL, StandardResults) {
+TEST(CRC, StandardResults) {
   // From rfc3720 section B.4.
   char buf[32];
 
@@ -47,16 +47,16 @@ TEST(CRCL, StandardResults) {
   ASSERT_EQ(0xd9963a56, Value(reinterpret_cast<char*>(data), sizeof(data)));
 }
 
-TEST(CRCL, Values) {
+TEST(CRC, Values) {
   ASSERT_NE(Value("a", 1), Value("foo", 3));
 }
 
-TEST(CRCL, Extend) {
+TEST(CRC, Extend) {
   ASSERT_EQ(Value("hello world", 11),
             Extend(Value("hello ", 6), "world", 5));
 }
 
-TEST(CRCL, Mask) {
+TEST(CRC, Mask) {
   uint32_t crc = Value("foo", 3);
   ASSERT_NE(crc, Mask(crc));
   ASSERT_NE(crc, Mask(Mask(crc)));

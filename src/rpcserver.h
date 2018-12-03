@@ -123,7 +123,7 @@ public:
 };
 
 /**
- * CRowdCLassic RPC command dispatcher.
+ * Crowdcoin RPC command dispatcher.
  */
 class CRPCTable
 {

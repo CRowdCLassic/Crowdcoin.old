@@ -1,0 +1,6 @@
+usr/local/bin/crowdcoin-qt usr/bin
+share/pixmaps/crowdcoin32.xpm usr/share/pixmaps
+share/pixmaps/crowdcoin16.xpm usr/share/pixmaps
+share/pixmaps/crowdcoin128.png usr/share/pixmaps
+debian/crowdcoin-qt.desktop usr/share/applications
+debian/crowdcoin-qt.protocol usr/share/kde4/services/

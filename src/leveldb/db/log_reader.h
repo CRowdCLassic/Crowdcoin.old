@@ -78,7 +78,7 @@ class Reader {
     kEof = kMaxRecordType + 1,
     // Returned whenever we find an invalid physical record.
     // Currently there are three situations in which this happens:
-    // * The record has an invalid CRCL (ReadPhysicalRecord reports a drop)
+    // * The record has an invalid CRC (ReadPhysicalRecord reports a drop)
     // * The record is a 0-length record (No drop is reported)
     // * The record is below constructor's initial_offset (No drop is reported)
     kBadRecord = kMaxRecordType + 2

@@ -26,9 +26,7 @@ if ! $VALID; then
 	exit 1
 fi
 if $VALID && $REVSIG; then
-# Fix CVE-2018-12356 by hardening the regex as at https://github.com/HTMLCOIN/HTMLCOIN/commit/79aaacff7807f6a791d7d89354b1a698a13a9210
-# echo "$INPUT" | gpg --trust-model always "$@" | grep "\[GNUPG:\] \(NEWSIG\|SIG_ID\|VALIDSIG\)" 2>/dev/null
-	echo "$INPUT" | gpg --trust-model always "$@" 2>/dev/null | grep "^\[GNUPG:\] \(NEWSIG\|SIG_ID\|VALIDSIG\)"
+	echo "$INPUT" | gpg --trust-model always "$@" | grep "\[GNUPG:\] \(NEWSIG\|SIG_ID\|VALIDSIG\)" 2>/dev/null
 	echo "$GOODREVSIG"
 else
 	echo "$INPUT" | gpg --trust-model always "$@" 2>/dev/null

@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[crowdclassic.qt-translation-012x]
-file_filter = src/qt/locale/crowdclassic_<lang>.ts
-source_file = src/qt/locale/crowdclassic_en.ts
+[crowdcoin.qt-translation-012x]
+file_filter = src/qt/locale/crowdcoin_<lang>.ts
+source_file = src/qt/locale/crowdcoin_en.ts
 source_lang = en
