@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "reverselock.h"
-#include "test/test_crowdcoin.h"
+#include "test/test_crowdclassic.h"
 
 #include <boost/test/unit_test.hpp>
 

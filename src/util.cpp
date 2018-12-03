@@ -1,11 +1,11 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Crowdcoin Core developers
+// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/crowdcoin-config.h"
+#include "config/crowdclassic-config.h"
 #endif
 
 #include "util.h"
@@ -102,7 +102,7 @@ namespace boost {
 
 using namespace std;
 
-//Crowdcoin only features
+//CRowdCLassic only features
 bool fMasterNode = false;
 bool fLiteMode = false;
 /**
@@ -114,8 +114,8 @@ bool fLiteMode = false;
 */
 int nWalletBackups = 10;
 
-const char * const BITCOIN_CONF_FILENAME = "crowdcoin.conf";
-const char * const BITCOIN_PID_FILENAME = "crowdcoind.pid";
+const char * const BITCOIN_CONF_FILENAME = "crowdclassic.conf";
+const char * const BITCOIN_PID_FILENAME = "crowdclassicd.pid";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
@@ -269,8 +269,8 @@ bool LogAcceptCategory(const char* category)
             const vector<string>& categories = mapMultiArgs["-debug"];
             ptrCategory.reset(new set<string>(categories.begin(), categories.end()));
             // thread_specific_ptr automatically deletes the set when the thread ends.
-            // "crowdcoin" is a composite category enabling all Crowdcoin-related debug output
-            if(ptrCategory->count(string("crowdcoin"))) {
+            // "crowdclassic" is a composite category enabling all CRowdCLassic-related debug output
+            if(ptrCategory->count(string("crowdclassic"))) {
                 ptrCategory->insert(string("privatesend"));
                 ptrCategory->insert(string("instantsend"));
                 ptrCategory->insert(string("masternode"));
@@ -494,7 +494,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "crowdcoin";
+    const char* pszModule = "crowdclassic";
 #endif
     if (pex)
         return strprintf(
@@ -514,13 +514,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\CrowdcoinCore
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\CrowdcoinCore
-    // Mac: ~/Library/Application Support/CrowdcoinCore
-    // Unix: ~/.crowdcoincore
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\CRowdCLassicCore
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\CRowdCLassicCore
+    // Mac: ~/Library/Application Support/CRowdCLassicCore
+    // Unix: ~/.crowdclassiccore
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "CrowdcoinCore";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "CRowdCLassicCore";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -530,10 +530,10 @@ boost::filesystem::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // Mac
-    return pathRet / "Library/Application Support/CrowdcoinCore";
+    return pathRet / "Library/Application Support/CRowdCLassicCore";
 #else
     // Unix
-    return pathRet / ".crowdcoincore";
+    return pathRet / ".crowdclassiccore";
 #endif
 #endif
 }
@@ -627,7 +627,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()){
-        // Create empty crowdcoin.conf if it does not excist
+        // Create empty crowdclassic.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -639,7 +639,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
     for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
     {
-        // Don't overwrite existing settings so command line settings override crowdcoin.conf
+        // Don't overwrite existing settings so command line settings override crowdclassic.conf
         string strKey = string("-") + it->string_key;
         string strValue = it->value[0];
         InterpretNegativeSetting(strKey, strValue);

@@ -146,7 +146,7 @@ Gavin Andresen
 Giel van Schijndel
 Gregory Maxwell
 Jeff Garzik
-Luke Crowdcoinjr
+Luke CRowdCLassicjr
 Matt Corallo
 Michael Ford
 Michael Hendricks

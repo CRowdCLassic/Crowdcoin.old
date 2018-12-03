@@ -1,7 +1,7 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/crowdcoincoin/crowdcoin/blob/master/doc/translation_process.md#syncing-with-transifex)
+* Update translations, see [translation_process.md](https://github.com/crowdclassiccoin/crowdclassic/blob/master/doc/translation_process.md#syncing-with-transifex)
 * Update hardcoded [seeds](/contrib/seeds)
 
 * * *
@@ -10,14 +10,14 @@ Release Process
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/crowdcoincoin/gitian.sigs.git
-	git clone https://github.com/crowdcoincoin/crowdcoin-detached-sigs.git
+	git clone https://github.com/crowdclassiccoin/gitian.sigs.git
+	git clone https://github.com/crowdclassiccoin/crowdclassic-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/crowdcoincoin/crowdcoin.git
+	git clone https://github.com/crowdclassiccoin/crowdclassic.git
 
-###Crowdcoin Core maintainers/release engineers, update (commit) version in sources
+###CRowdCLassic Core maintainers/release engineers, update (commit) version in sources
 
-	pushd ./crowdcoin
+	pushd ./crowdclassic
 	contrib/verifysfbinaries/verify.sh
 	configure.ac
 	doc/README*
@@ -40,7 +40,7 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./crowdcoin
+	pushd ./crowdclassic
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
@@ -76,52 +76,52 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../crowdcoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../crowdclassic/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 ```
-./bin/gbuild --url crowdcoin=/path/to/crowdcoin,signature=/path/to/sigs {rest of arguments}
+./bin/gbuild --url crowdclassic=/path/to/crowdclassic,signature=/path/to/sigs {rest of arguments}
 ```
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-###Build and sign Crowdcoin Core for Linux, Windows, and OS X:
+###Build and sign CRowdCLassic Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit crowdcoin=v${VERSION} ../crowdcoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../crowdcoin/contrib/gitian-descriptors/gitian-linux.yml
-	mv build/out/crowdcoin-*.tar.gz build/out/src/crowdcoin-*.tar.gz ../
+	./bin/gbuild --commit crowdclassic=v${VERSION} ../crowdclassic/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../crowdclassic/contrib/gitian-descriptors/gitian-linux.yml
+	mv build/out/crowdclassic-*.tar.gz build/out/src/crowdclassic-*.tar.gz ../
 
-	./bin/gbuild --commit crowdcoin=v${VERSION} ../crowdcoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../crowdcoin/contrib/gitian-descriptors/gitian-win.yml
-	mv build/out/crowdcoin-*-win-unsigned.tar.gz inputs/crowdcoin-win-unsigned.tar.gz
-	mv build/out/crowdcoin-*.zip build/out/crowdcoin-*.exe ../
+	./bin/gbuild --commit crowdclassic=v${VERSION} ../crowdclassic/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../crowdclassic/contrib/gitian-descriptors/gitian-win.yml
+	mv build/out/crowdclassic-*-win-unsigned.tar.gz inputs/crowdclassic-win-unsigned.tar.gz
+	mv build/out/crowdclassic-*.zip build/out/crowdclassic-*.exe ../
 
-	./bin/gbuild --commit crowdcoin=v${VERSION} ../crowdcoin/contrib/gitian-descriptors/gitian-osx.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../crowdcoin/contrib/gitian-descriptors/gitian-osx.yml
-	mv build/out/crowdcoin-*-osx-unsigned.tar.gz inputs/crowdcoin-osx-unsigned.tar.gz
-	mv build/out/crowdcoin-*.tar.gz build/out/crowdcoin-*.dmg ../
+	./bin/gbuild --commit crowdclassic=v${VERSION} ../crowdclassic/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../crowdclassic/contrib/gitian-descriptors/gitian-osx.yml
+	mv build/out/crowdclassic-*-osx-unsigned.tar.gz inputs/crowdclassic-osx-unsigned.tar.gz
+	mv build/out/crowdclassic-*.tar.gz build/out/crowdclassic-*.dmg ../
 	popd
 
   Build output expected:
 
-  1. source tarball (crowdcoin-${VERSION}.tar.gz)
-  2. linux 32-bit and 64-bit dist tarballs (crowdcoin-${VERSION}-linux[32|64].tar.gz)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (crowdcoin-${VERSION}-win[32|64]-setup-unsigned.exe, crowdcoin-${VERSION}-win[32|64].zip)
-  4. OS X unsigned installer and dist tarball (crowdcoin-${VERSION}-osx-unsigned.dmg, crowdcoin-${VERSION}-osx64.tar.gz)
+  1. source tarball (crowdclassic-${VERSION}.tar.gz)
+  2. linux 32-bit and 64-bit dist tarballs (crowdclassic-${VERSION}-linux[32|64].tar.gz)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (crowdclassic-${VERSION}-win[32|64]-setup-unsigned.exe, crowdclassic-${VERSION}-win[32|64].zip)
+  4. OS X unsigned installer and dist tarball (crowdclassic-${VERSION}-osx-unsigned.dmg, crowdclassic-${VERSION}-osx64.tar.gz)
   5. Gitian signatures (in gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/
 
 ###Verify other gitian builders signatures to your own. (Optional)
 
   Add other gitian builders keys to your gpg keyring
 
-	gpg --import ../crowdcoin/contrib/gitian-downloader/*.pgp
+	gpg --import ../crowdclassic/contrib/gitian-downloader/*.pgp
 
   Verify the signatures
 
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../crowdcoin/contrib/gitian-descriptors/gitian-linux.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../crowdcoin/contrib/gitian-descriptors/gitian-win.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../crowdcoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../crowdclassic/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../crowdclassic/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../crowdclassic/contrib/gitian-descriptors/gitian-osx.yml
 
 	popd
 
@@ -139,25 +139,25 @@ Commit your signature to gitian.sigs:
 
   Wait for Windows/OS X detached signatures:
 	Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-	Detached signatures will then be committed to the [crowdcoin-detached-sigs](https://github.com/crowdcoincoin/crowdcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+	Detached signatures will then be committed to the [crowdclassic-detached-sigs](https://github.com/crowdclassiccoin/crowdclassic-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
   Create (and optionally verify) the signed OS X binary:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../crowdcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../crowdcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../crowdcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-	mv build/out/crowdcoin-osx-signed.dmg ../crowdcoin-${VERSION}-osx.dmg
+	./bin/gbuild -i --commit signature=v${VERSION} ../crowdclassic/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../crowdclassic/contrib/gitian-descriptors/gitian-osx-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../crowdclassic/contrib/gitian-descriptors/gitian-osx-signer.yml
+	mv build/out/crowdclassic-osx-signed.dmg ../crowdclassic-${VERSION}-osx.dmg
 	popd
 
   Create (and optionally verify) the signed Windows binaries:
 
 	pushd ./gitian-builder
-	./bin/gbuild -i --commit signature=v${VERSION} ../crowdcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../crowdcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../crowdcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-	mv build/out/crowdcoin-*win64-setup.exe ../crowdcoin-${VERSION}-win64-setup.exe
-	mv build/out/crowdcoin-*win32-setup.exe ../crowdcoin-${VERSION}-win32-setup.exe
+	./bin/gbuild -i --commit signature=v${VERSION} ../crowdclassic/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../crowdclassic/contrib/gitian-descriptors/gitian-win-signer.yml
+	./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../crowdclassic/contrib/gitian-descriptors/gitian-win-signer.yml
+	mv build/out/crowdclassic-*win64-setup.exe ../crowdclassic-${VERSION}-win64-setup.exe
+	mv build/out/crowdclassic-*win32-setup.exe ../crowdclassic-${VERSION}-win32-setup.exe
 	popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -182,21 +182,21 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the crowdcoin.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the crowdclassic.org server
 
-- Update crowdcoin.org
+- Update crowdclassic.org
 
 - Announce the release:
 
-  - Release on Crowdcoin forum: https://www.crowdcoin.org/forum/topic/official-announcements.54/
+  - Release on CRowdCLassic forum: https://www.crowdclassic.org/forum/topic/official-announcements.54/
 
-  - Crowdcoin-development mailing list
+  - CRowdCLassic-development mailing list
 
-  - Update title of #crowdcoincoin on Freenode IRC
+  - Update title of #crowdclassiccoin on Freenode IRC
 
-  - Optionally reddit /r/Crowdcoinpay, ... but this will usually sort out itself
+  - Optionally reddit /r/CRowdCLassicpay, ... but this will usually sort out itself
 
-- Notify flare so that he can start building [the PPAs](https://launchpad.net/~crowdcoin.org/+archive/ubuntu/crowdcoin)
+- Notify flare so that he can start building [the PPAs](https://launchpad.net/~crowdclassic.org/+archive/ubuntu/crowdclassic)
 
 - Add release notes for the new version to the directory `doc/release-notes` in git master
 

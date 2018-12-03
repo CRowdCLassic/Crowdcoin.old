@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both crowdcoind and crowdcoin-qt, to make it harder for attackers to
+ * for both crowdclassicd and crowdclassic-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Crowdcoin Core");
+const std::string CLIENT_NAME("CRowdCLassic Core");
 
 /**
  * Client version number
