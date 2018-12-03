@@ -55,15 +55,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += crowdcoind
+  bin_PROGRAMS += crowdclassicd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += crowdcoin-cli crowdcoin-tx
+  bin_PROGRAMS += crowdclassic-cli crowdclassic-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# crowdcoin core #
+# crowdclassic core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addressindex.h \
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between crowdcoind and crowdcoin-qt
+# server: shared between crowdclassicd and crowdclassic-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -249,7 +249,7 @@ libbitcoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between crowdcoind and crowdcoin-qt, but only linked
+# wallet: shared between crowdclassicd and crowdclassic-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -320,7 +320,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# common: shared between crowdcoind, and crowdcoin-qt and non-server tools
+# common: shared between crowdclassicd, and crowdclassic-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -377,7 +377,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between crowdcoin-cli and crowdcoin-qt
+# cli: shared between crowdclassic-cli and crowdclassic-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -388,16 +388,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind binary #
-crowdcoind_SOURCES = crowdcoind.cpp
-crowdcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-crowdcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crowdcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+crowdclassicd_SOURCES = crowdclassicd.cpp
+crowdclassicd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+crowdclassicd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crowdclassicd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-crowdcoind_SOURCES += crowdcoind-res.rc
+crowdclassicd_SOURCES += crowdclassicd-res.rc
 endif
 
-crowdcoind_LDADD = \
+crowdclassicd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -408,50 +408,50 @@ crowdcoind_LDADD = \
   $(LIBSECP256K1)
 
 if ENABLE_ZMQ
-crowdcoind_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+crowdclassicd_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
 
 if ENABLE_WALLET
-crowdcoind_LDADD += libbitcoin_wallet.a
+crowdclassicd_LDADD += libbitcoin_wallet.a
 endif
 
-crowdcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
+crowdclassicd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
 
-# crowdcoin-cli binary #
-crowdcoin_cli_SOURCES = crowdcoin-cli.cpp
-crowdcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-crowdcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crowdcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# crowdclassic-cli binary #
+crowdclassic_cli_SOURCES = crowdclassic-cli.cpp
+crowdclassic_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+crowdclassic_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crowdclassic_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-crowdcoin_cli_SOURCES += crowdcoin-cli-res.rc
+crowdclassic_cli_SOURCES += crowdclassic-cli-res.rc
 endif
 
-crowdcoin_cli_LDADD = \
+crowdclassic_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL)
-crowdcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+crowdclassic_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# crowdcoin-tx binary #
-crowdcoin_tx_SOURCES = crowdcoin-tx.cpp
-crowdcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-crowdcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crowdcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# crowdclassic-tx binary #
+crowdclassic_tx_SOURCES = crowdclassic-tx.cpp
+crowdclassic_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+crowdclassic_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crowdclassic_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-crowdcoin_tx_SOURCES += crowdcoin-tx-res.rc
+crowdclassic_tx_SOURCES += crowdclassic-tx-res.rc
 endif
 
-crowdcoin_tx_LDADD = \
+crowdclassic_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-crowdcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+crowdclassic_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

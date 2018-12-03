@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C .. crowdcoin_test
+	$(MAKE) -C .. crowdclassic_test
 clean:
-	$(MAKE) -C .. crowdcoin_test_clean
+	$(MAKE) -C .. crowdclassic_test_clean
 check:
-	$(MAKE) -C .. crowdcoin_test_check
+	$(MAKE) -C .. crowdclassic_test_check

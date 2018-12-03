@@ -48,10 +48,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.2.1.md" afterPath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.2.1.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.2.md" afterPath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.2.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.4.md" afterPath="$PROJECT_DIR$/doc/release-notes/bitcoin/release-notes-0.9.4.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.0.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.0.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.1.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.1.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.2.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.11.2.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.12.0.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdcoin/release-notes-0.12.0.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.0.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.0.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.1.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.1.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.2.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.11.2.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.12.0.md" afterPath="$PROJECT_DIR$/doc/release-notes/crowdclassic/release-notes-0.12.0.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/release-notes-0.12.0.md" afterPath="$PROJECT_DIR$/doc/release-notes/release-notes-0.12.0.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/release-notes/release-notes-0.12.1.md" afterPath="$PROJECT_DIR$/doc/release-notes/release-notes-0.12.1.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/tor.md" afterPath="$PROJECT_DIR$/doc/tor.md" />
@@ -229,9 +229,9 @@
     <replaceStrings>
       <replace>9413</replace>
       <replace>9414</replace>
-      <replace>Crowdcoin</replace>
-      <replace>crowdcoin</replace>
-      <replace>CRC</replace>
+      <replace>CRowdCLassic</replace>
+      <replace>crowdclassic</replace>
+      <replace>CRCL</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -293,11 +293,11 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Crowdcoin" />
+              <option name="myItemId" value="CRowdCLassic" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Crowdcoin" />
+              <option name="myItemId" value="CRowdCLassic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,7 +352,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -367,7 +367,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -395,7 +395,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -414,7 +414,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -433,7 +433,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -454,7 +454,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -476,7 +476,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="crowdcoin" />
+      <module name="crowdclassic" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />

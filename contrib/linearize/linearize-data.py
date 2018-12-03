@@ -17,7 +17,7 @@ import base64
 import httplib
 import sys
 import hashlib
-import crowdcoin_hash
+import crowdclassic_hash
 import datetime
 import time
 from collections import namedtuple
@@ -55,7 +55,7 @@ def calc_hdr_hash(blk_hdr):
 	#hash2_o = hash2.digest()
 
 	#return hash2_o
-        pow_hash = crowdcoin_hash.getPoWHash(blk_hdr)
+        pow_hash = crowdclassic_hash.getPoWHash(blk_hdr)
         return pow_hash
 
 def calc_hash_str(blk_hdr):

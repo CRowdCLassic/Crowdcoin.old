@@ -5,7 +5,7 @@
 #include "dbwrapper.h"
 #include "uint256.h"
 #include "random.h"
-#include "test/test_crowdcoin.h"
+#include "test/test_crowdclassic.h"
 
 #include <boost/assign/std/vector.hpp> // for 'operator+=()'
 #include <boost/assert.hpp>

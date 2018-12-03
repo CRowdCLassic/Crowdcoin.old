@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Crowdcoin Core developers
+// Copyright (c) 2014-2017 The Crowdcoin Core developers; Copyright (c) 2018-2019 The CRowdCLassic Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -92,8 +92,8 @@ public:
         consensus.BIP34Height = 227931; // FIX
         consensus.BIP34Hash = uint256S("0x000000000000024b89b42a942fe0d9fea3bb44ab7bd1b19115dd6a759c0808b8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 30 * 2 * 60; // Crowdcoin: 1 hour, 30 blocks
-        consensus.nPowTargetSpacing = 2 * 60; // Crowdcoin: 2 minutes
+        consensus.nPowTargetTimespan = 30 * 2 * 60; // CRowdCLassic: 1 hour, 30 blocks
+        consensus.nPowTargetSpacing = 2 * 60; // CRowdCLassic: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1916; // 95% of 2016
@@ -126,26 +126,27 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000007db550074c6535ce41c2a6043d0afbc86f17f1762b06e2cd65d100f7b5f"));
         assert(genesis.hashMerkleRoot == uint256S("0x06bb68e5a31f7ec49812110b03e088006342bc3598b1d705f7ae7282b8eec4a8"));
 
-
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin1.masterhash.us"));
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin2.masterhash.us"));
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin3.masterhash.us"));
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin4.masterhash.us"));
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin5.masterhash.us"));
-        vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdcoin6.masterhash.us"));
+//        vSeeds.emplace_back(CDNSSeedData("seeds.crcl.dns-cloud.net", false)); // As it is explained here: https://stackoverflow.com/questions/4303513/push-back-vs-emplace-back
+        vSeeds.push_back(CDNSSeedData("crcl.dns-cloud.net", "seeds.crcl.dns-cloud.net")); // New DNS seed server
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic1.masterhash.us"));
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic2.masterhash.us"));
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic3.masterhash.us"));
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic4.masterhash.us"));
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic5.masterhash.us"));
+        //vSeeds.push_back(CDNSSeedData("masterhash.us", "crowdclassic6.masterhash.us"));
         //vSeeds.push_back(CDNSSeedData("shmest.win", "dns.shmest.win"));
 
-        // Crowdcoin addresses start with 'C'
+        // CRowdCLassic addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
-        // Crowdcoin script addresses start with 'c'
+        // CRowdCLassic script addresses start with 'c'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,88);
-        // Crowdcoin private keys start with '1'
+        // CRowdCLassic private keys start with '1'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0);
-        // Crowdcoin BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+        // CRowdCLassic BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        // Crowdcoin BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+        // CRowdCLassic BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
-        // Crowdcoin BIP44 coin type is '5'
+        // CRowdCLassic BIP44 coin type is '5'
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x05).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -167,11 +168,16 @@ public:
 			(1000, uint256S("0x0000000000cc4284e6b5ad555b8c8a61959877bf653c4db4e8d86459a55505ca"))
 			(6000, uint256S("0x000000000214e1ef102d5e6e8761b31b55d492c9de45f72a5dea24d13ad2d597"))
 			(15000, uint256S("0x0000000001d1792a049f1d8c7eaf5c3514e41920731fbbc3f52371cf0252a948"))
-			(20147, uint256S("0x0000000000eb04381ee1cb7cbee2919050f298881196373bd81f5d9be55d8eba")),
-			1514485967,    // * UNIX timestamp of last checkpoint block
-			30252,        // * total number of transactions between genesis and last checkpoint
-					   //   (the tx=... number in the SetBestChain debug.log lines)
-			2800           // * estimated number of transactions per day after checkpoint
+			(20147, uint256S("0x0000000000eb04381ee1cb7cbee2919050f298881196373bd81f5d9be55d8eba"))
+      (175000, uint256S("000000001014249a75229a0047fdbefb875276caecde3539555c16239d6adb08"))
+      (241300, uint256S("000000030a58266c96271204dd7a4817f64780b3462916ba601284fde4922510")), // Added 23.11.18
+
+//      1534179068,    // * UNIX timestamp of last checkpoint block
+//			257822,        // * total number of transactions between genesis and last checkpoint
+      1543006578,    // * UNIX timestamp of last checkpoint block
+			318956,        // * total number of transactions between genesis and last checkpoint
+   				    	       //   (the tx=... number in the SetBestChain debug.log lines)
+			1500           // * estimated number of transactions per day after checkpoint
 		};
     }
 };
@@ -204,8 +210,8 @@ public:
         consensus.BIP34Height = 21111; // FIX
         consensus.BIP34Hash = uint256S("0x0000000023b3a96d3484e5abb3755c413e7d41500f8e2a5c3f0dd01299cd8ef8"); // FIX
         consensus.powLimit = uint256S("00000fffff000000000000000000000000000000000000000000000000000000");
-        consensus.nPowTargetTimespan = 60 * 60; // Crowdcoin: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Crowdcoin: 2 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // CRowdCLassic: 1 hour
+        consensus.nPowTargetSpacing = 2 * 60; // CRowdCLassic: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -235,19 +241,19 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("crowdcoinnodes.space",  "testnet-dns.crowdcoinnodes.space"));
+        vSeeds.push_back(CDNSSeedData("crowdclassicnodes.space",  "testnet-dns.crowdclassicnodes.space"));
 
-        // Testnet Crowdcoin addresses start with 'C'
+        // Testnet CRowdCLassic addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
-        // Testnet Crowdcoin script addresses start with 'c'
+        // Testnet CRowdCLassic script addresses start with 'c'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,88);
         // Testnet private keys start with '1'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0);
-        // Testnet Crowdcoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Testnet CRowdCLassic BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Crowdcoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Testnet CRowdCLassic BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Testnet Crowdcoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet CRowdCLassic BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -304,8 +310,8 @@ public:
         consensus.BIP34Height = -1; // BIP34 has not necessarily activated on regtest
         consensus.BIP34Hash = uint256();
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 60 * 60; // Crowdcoin: 1 hour
-        consensus.nPowTargetSpacing = 2 * 60; // Crowdcoin: 2 minutes
+        consensus.nPowTargetTimespan = 60 * 60; // CRowdCLassic: 1 hour
+        consensus.nPowTargetSpacing = 2 * 60; // CRowdCLassic: 2 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
         consensus.nRuleChangeActivationThreshold = 108; // 75% for testchains
@@ -348,17 +354,17 @@ public:
             0,
             0
         };
-        // Regtest Crowdcoin addresses start with 'C'
+        // Regtest CRowdCLassic addresses start with 'C'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
-        // Regtest Crowdcoin script addresses start with 'c'
+        // Regtest CRowdCLassic script addresses start with 'c'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,88);
         // Regtest private keys start with '1'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0);
-        // Regtest Crowdcoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest CRowdCLassic BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Crowdcoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest CRowdCLassic BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Crowdcoin BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest CRowdCLassic BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE]  = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
    }
 };

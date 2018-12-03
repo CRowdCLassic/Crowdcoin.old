@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/crowdcoin-config.h"
+#include "config/crowdclassic-config.h"
 #endif
 
 #include "optionsdialog.h"

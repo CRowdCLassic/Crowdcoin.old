@@ -1,4 +1,4 @@
-Building Crowdcoin Core
+Building CRowdCLassic Core
 
 Use the autogen script to prepare the build environment.
 
@@ -7,10 +7,10 @@ Use the autogen script to prepare the build environment.
     make
 
 Precompiled binaries are available at github, see
-https://github.com/crowdcoincoin/crowdcoin-binaries
+https://github.com/crowdclassiccoin/crowdclassic-binaries
 
 Always verify the signatures and checksums.
 
-See doc/build-*.md for instructions on building crowdcoind,
+See doc/build-*.md for instructions on building crowdclassicd,
 the intended-for-services, no-graphical-interface, reference
-implementation of Crowdcoin.
+implementation of CRowdCLassic.

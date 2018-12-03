@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between crowdcoin-cli and crowdcoind)
- * of a given instance of the Crowdcoin system.
+ * CBaseChainParams defines the base parameters (shared between crowdclassic-cli and crowdclassicd)
+ * of a given instance of the CRowdCLassic system.
  */
 class CBaseChainParams
 {

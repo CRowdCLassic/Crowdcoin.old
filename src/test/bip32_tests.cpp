@@ -9,7 +9,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_crowdcoin.h"
+#include "test/test_crowdclassic.h"
 
 #include <string>
 #include <vector>
