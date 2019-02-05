@@ -1,10 +1,7 @@
 CRowdCLassic Core staging tree 0.12.1
 ===============================
 
-`v0.12.1.x:` [![Build Status](https://travis-ci.org/CRowdCLassic/crowdclassic-wallet.svg?branch=v0.12.1.x)](https://travis-ci.org/CRowdCLassic/crowdclassic-wallet/branches)
-
-http://crowdclassic.github.io
-
+`v0.12.1.x:` [![Build Status](https://travis-ci.org/CRowdCLassic/crowdclassic-core.svg?branch=v0.12.1.x)](https://travis-ci.org/CRowdCLassic/crowdclassic-core/branches)
 
 What is CRowdCLassic?
 ----------------
