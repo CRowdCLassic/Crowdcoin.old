@@ -1,7 +1,7 @@
 CRowdCLassic Core staging tree 0.12.1
 ===============================
 
-`v0.12.1.x:` [![Build Status](https://travis-ci.org/CRowdCLassic/crowdclassic-core.svg?branch=v0.12.1.x)](https://travis-ci.org/CRowdCLassic/crowdclassic-core/branches)
+`v0.12.1.9:` [![Build Status](https://travis-ci.org/CRowdCLassic/crowdclassic-core.svg?branch=v0.12.1.9-beta)](https://travis-ci.org/CRowdCLassic/crowdclassic-core/branches)
 
 What is CRowdCLassic?
 ----------------
